@@ -8,7 +8,7 @@ import {useFonts} from 'expo-font'
 
 import Home from './screens/Home'
 import Cities from './screens/Cities'
-import Itineraries from './screens/Itineraries'
+import Detail from './screens/Detail'
 
 //redux
 import {Provider} from 'react-redux'
@@ -25,7 +25,7 @@ export default function App() {
     let [fonts] = useFonts({FredokaOne_400Regular})
     if (!fonts) {return <AppLoading />}
     return (
-        <Provider store={reduxStore}>
+        <Provider store={reduxStore}> 
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="Home">
                     <Stack.Screen name="Home" component={Home} options={{
@@ -42,8 +42,8 @@ export default function App() {
                         headerTitleAlign: 'center',
                         headerTitleStyle: {fontFamily: 'FredokaOne_400Regular'}
                     }}/>
-                    <Stack.Screen name="Itineraries" component={Itineraries} options={{
-                        title: 'MyTineraryApp-Itineraries',
+                    <Stack.Screen name="Detail" component={Detail} options={{
+                        title: 'MyTineraryApp-Details',
                         headerStyle: {backgroundColor: 'black'},
                         headerTintColor: 'white',
                         headerTitleAlign: 'center',

@@ -9,7 +9,7 @@ export default function Card (props) {
     var image = props.city.image
 
     return (
-        <TouchableOpacity onPress={()=>navigation.navigate('Itineraries',{id: props.city._id})}>
+        <TouchableOpacity onPress={()=>navigation.navigate('Detail',{id: props.city._id})}>
             <View style={styles.absolute}>
                 <Text style={styles.fredokaTitle}>{props.city.name}</Text>
             </View>
