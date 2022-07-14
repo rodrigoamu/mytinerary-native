@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import {StyleSheet,Text,ScrollView,View,Image,ImageBackground,Dimensions} from 'react-native'
 //redux
 import {useDispatch, useSelector} from 'react-redux'
 import citiesActions from '../redux/actions/citiesActions'
-
 
 var {height} = Dimensions.get('window')
 
@@ -17,19 +16,18 @@ export default function Itineraries(props) {
     },[])
     const oneCityFromRedux = useSelector(store => store.citiesReducers.oneCity)
 
-
     var image = 'https://mytinerary-amuchastegui-rodrig.herokuapp.com'+oneCityFromRedux.image
 
     return (
         <View style={styles.home}>
-            <ImageBackground source={require('../assets/photos/background.jpg')} resizeMode="cover" style={styles.backGhome}>
-                <View style={styles.backGhome}>
+            <ImageBackground source={require('../assets/photos/background.jpg')} resizeMode="cover" style={styles.backGroundhome}>
+                <View style={styles.backGroundhome}>
                     <ScrollView style={styles.body}>
                         <View style={styles.absolute}>
-                            <Text style={styles.fredokaTitle}>{oneCityFromRedux.city}</Text>
-                            <Text style={styles.fredokaSubtitle}>{oneCityFromRedux.country} - {oneCityFromRedux.name}</Text>
+                            <Text style={styles.Title}>{oneCityFromRedux.city}</Text>
+                            <Text style={styles.Subtitle}>{oneCityFromRedux.country} - {oneCityFromRedux.name}</Text>
                         </View>
-                        <Image source={{uri: oneCityFromRedux.image}} style={{width: '100%', height: 290}}/>
+                        <Image source={{uri: oneCityFromRedux.image}} style={{width: '100%', height: 390}}/>
                         <Text>-</Text>
                         <Text style={styles.description}>{oneCityFromRedux.description}</Text>
                     </ScrollView>
@@ -47,7 +45,7 @@ const styles = StyleSheet.create({
         width: "100%",
         backgroundColor: 'rgba(130, 77, 52, 0.3)'
     },
-    backGhome: {
+    backGroundhome: {
         width: '100%',
         height: height,
         margin: 0,
@@ -74,16 +72,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: 'rgba(130, 77, 52, 0)'
     },
-    fredokaTitle: {
-
+    Title: {
         fontSize: 40,
         textAlign: 'center',
         textShadowColor: 'red',
         textShadowOffset: {width: 0,height: 2},
         textShadowRadius: 1
     },
-    fredokaSubtitle: {
-     
+    Subtitle: {  
         fontSize: 35,
         paddingBottom: 200,
         textAlign: 'center',
@@ -92,21 +88,7 @@ const styles = StyleSheet.create({
         textShadowOffset: {width: 2,height: 3},
         textShadowRadius: 1
     },
-    fredoka: {
-       
-        textAlign: 'center'
-    },
-    licorice: {
-        fontSize: 30,
-        textAlign: 'center',
-        textShadowColor: 'black',
-        color: 'white',
-        textShadowOffset: {width: 0,height: 2},
-        textShadowRadius: 1,
-        backgroundColor: 'red',
-        top: 40,
-        paddingBottom: 50
-    },
+  
     description: {
         fontSize: 25,
         color: 'black',
@@ -115,7 +97,6 @@ const styles = StyleSheet.create({
         textShadowRadius: 1,
         textAlign: 'center',
         backgroundColor: 'rgba(242, 227, 223, 0.5)',
-        borderRadius: 20,
-               
+        borderRadius: 20,              
     },
 })

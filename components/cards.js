@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import {StyleSheet,Text,ScrollView,View,Pressable,Image,Dimensions} from 'react-native'
+import {StyleSheet,Text,View} from 'react-native'
 
 import Card from './card'
 
@@ -24,8 +24,8 @@ export default function Cards (props) {
             <View key={cities._id} style={{marginBottom: 10}}>
                 <Card city={cities} navigation={props.navigation}/>
             </View>) : <>
-                <Text style={styles.fredoka}>TYPE ANOTHER CITY PLEASE</Text>
-                <Text style={styles.fredoka}>we didn't find that!</Text>
+                <Text style={styles.nocity}>TYPE ANOTHER CITY PLEASE</Text>
+                <Text style={styles.nocity}>We couldn't find that city</Text>
             </>
         }
         </>
@@ -34,8 +34,13 @@ export default function Cards (props) {
 
 //styles
 const styles = StyleSheet.create({
-    fredoka: {
-        fontFamily: 'FredokaOne_400Regular',
-        textAlign: 'center'
+    nocity: {
+        fontSize: 40,
+        textAlign: 'center',
+        color: 'red',
+        textShadowColor: 'black',
+        textShadowOffset: {width: 2,height: 4},
+        textShadowRadius: 1
+        
     }
 })

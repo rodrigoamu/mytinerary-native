@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import {StyleSheet,TextInput,ScrollView,View,ImageBackground,Dimensions} from 'react-native'
-
 import Cards from '../components/cards'
 //redux
 import {useDispatch, useSelector} from 'react-redux'
@@ -20,9 +19,9 @@ export default function Cities(props) {
 
     return (
         <View style={styles.home}>
-            <ImageBackground source={require('../assets/photos/background.jpg')} resizeMode="cover" style={styles.backGhome}>
-                <View style={styles.backGhome}>
-                    <TextInput onChangeText={text => setInput(text)} placeholder="FIND A CITY HERE!" style={[styles.input,styles.fredoka]} />
+            <ImageBackground source={require('../assets/photos/background.jpg')} resizeMode="cover" style={styles.backGroundhome}>
+                <View style={styles.backGroundhome}>
+                    <TextInput onChangeText={text => setInput(text)} placeholder="FIND A CITY HERE!" style={[styles.input,styles.inputtext]} />
                     <ScrollView style={styles.body}>
                         <Cards input={input} cities={citiesFromRedux} navigation={props.navigation} />
                     </ScrollView>
@@ -38,9 +37,9 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         width: "100%",
-        backgroundColor: 'rgba(130, 77, 52, 0.3)'
+        backgroundColor: 'rgba(130, 77, 52, 0.1)'
     },
-    backGhome: {
+    backGroundhome: {
         width: '100%',
         height: height,
         margin: 0,
@@ -64,9 +63,8 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         color: 'black'
     },
-    fredoka: {
-       fontSize: 30,
-      
+    inputtext: {
+       fontSize: 30,     
         textAlign: 'center'
     },
 })

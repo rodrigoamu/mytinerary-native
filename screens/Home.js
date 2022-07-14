@@ -9,8 +9,8 @@ export default function Home() {
 
     return (
         <ScrollView style={styles.home}>
-            <ImageBackground source={require('../assets/photos/index.jpg')} resizeMode="cover" style={styles.backGhome}>
-                <View style={styles.backGhome}>
+            <ImageBackground source={require('../assets/photos/index.jpg')} resizeMode="cover" style={styles.backGroundhome}>
+                <View style={styles.backGroundhome}>
                     <Text style={styles.title}>MyTinerary</Text>
                     <Text style={styles.subtitle}>FIND YOUR PERFECT TRIP</Text>
                     <Text style={styles.subtitle}>designed by insiders who know and love their cities!</Text>
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         width: "100%",
         backgroundColor: 'rgba(130, 77, 52, 0.4)'
     },
-    backGhome: {
+    backGroundhome: {
         width: '100%',
         height: 850,
         margin: 0,
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        backgroundColor: 'rgba(130, 77, 52, 0.4)'
+        backgroundColor: 'rgba(130, 77, 52, 0.2)'
     },
     title: {
         fontSize: 70,
