@@ -1,28 +1,28 @@
-import {StyleSheet,Text,ScrollView,View,Pressable,ImageBackground,Dimensions} from 'react-native'
-// import {FredokaOne_400Regular} from '@expo-google-fonts/dev'
-// import {Licorice_400Regular} from '@expo-google-fonts/dev'
-// import AppLoading from 'expo-app-loading'
-// import {useFonts} from 'expo-font'
-import {useNavigation} from '@react-navigation/native'
+import { StyleSheet, Text, ScrollView, View, Pressable, ImageBackground, Dimensions } from 'react-native'
+import Courosel from '../components/carousel'
+import { useNavigation } from '@react-navigation/native'
 
-var {height} = Dimensions.get('window')
+var { height } = Dimensions.get('window')
 
 export default function Home() {
     const navigation = useNavigation()
-    // let [fonts] = useFonts({FredokaOne_400Regular,Licorice_400Regular})
-    // if (!fonts) {return <AppLoading />}
+
     return (
         <ScrollView style={styles.home}>
             <ImageBackground source={require('../assets/photos/index.jpg')} resizeMode="cover" style={styles.backGhome}>
                 <View style={styles.backGhome}>
-                    <Text style={styles.licorice}>MyTinerary</Text>
-                    <Text style={styles.fredoka}>FIND YOUR PERFECT TRIP</Text>
-                    <Text style={styles.fredoka}>designed by insiders who know and love their cities!</Text>
-                    <Pressable onPress={()=>navigation.navigate('Cities')} style={styles.linkHero} >
-                        <Text style={[styles.linkText,styles.fredoka]}>LET GET STARTED!</Text>
+                    <Text style={styles.title}>MyTinerary</Text>
+                    <Text style={styles.subtitle}>FIND YOUR PERFECT TRIP</Text>
+                    <Text style={styles.subtitle}>designed by insiders who know and love their cities!</Text>
+                    <Pressable onPress={() => navigation.navigate('Cities')} style={styles.linkHero} >
+                        <Text style={[styles.linkText, styles.subtitle]}>LET GET STARTED!</Text>
                     </Pressable>
                 </View>
+
             </ImageBackground>
+            <View style={styles.carousel}>
+                <Courosel />
+            </View>
         </ScrollView>
     );
 }
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     },
     backGhome: {
         width: '100%',
-        height: height,
+        height: 850,
         margin: 0,
         padding: 0,
         textAlign: 'center',
@@ -45,22 +45,20 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         backgroundColor: 'rgba(130, 77, 52, 0.4)'
     },
-    licorice: {
+    title: {
         fontSize: 70,
-        //fontFamily: 'Sans_serif',
         elevation: 100,
         textShadowColor: 'orange',
-        textShadowOffset: {width: 0,height: 2},
+        textShadowOffset: { width: 0, height: 2 },
         textShadowRadius: 5,
         color: 'black',
         padding: 10,
         marginTop: 50,
     },
-    fredoka: {
-        // fontFamily: 'FredokaOne_400Regular',
+    subtitle: {
         textAlign: 'center',
-      
-        
+
+
     },
     linkHero: {
         marginTop: 15,
@@ -75,5 +73,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         padding: 10,
         borderRadius: 10
+    },
+    carousel: {
+        minHeight: 800,
     }
 })

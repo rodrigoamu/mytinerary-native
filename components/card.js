@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(196, 165, 126, 0.4)'
     },
     fredokaTitle: {
-        fontFamily: 'FredokaOne_400Regular',
-        fontSize: 30,
+        color: 'white',
+        fontSize: 50,
         textAlign: 'center',
         padding: 10,
-        textShadowColor: 'white',
-        textShadowOffset: {width: 0,height: 2},
+        textShadowColor: 'black',
+        textShadowOffset: {width: 2,height: 4},
         textShadowRadius: 1
     }
 })
